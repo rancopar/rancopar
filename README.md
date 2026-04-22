@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RanCoPar
 
-## Getting Started
+**Ran Coding Partner — Kerala, India**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+RanCoPar is a web development studio founded by Adhil.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The studio builds web products with care: applications that are fast, honest, and built to last. Not assembled — crafted.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Capabilities
 
-## Learn More
+**Web Applications**
+Full-stack products from concept to deployment. Next.js, TypeScript, clean architecture.
 
-To learn more about Next.js, take a look at the following resources:
+**Admin & Management Systems**
+Internal tools built for real organisations and non-technical users. Reliable, structured, maintainable.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Interface Design**
+Typography, spacing, motion, and hierarchy treated as craft — not afterthought.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Performance & SEO**
+Core Web Vitals, structured metadata, and edge-ready deployment. Built to be found and felt fast.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Principles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Clarity over cleverness.**
+Code that reads clearly is code that survives. Written for the next developer, not to impress the current one.
+
+**Design is not decoration.**
+Every decision carries intent. Spacing, type, colour — none of it is accidental.
+
+**Partnership, not service.**
+Honest feedback. Real conversations. Shared ownership of outcomes.
+
+---
+
+## Contact
+
+Available for new projects.
+
+[rancopar@gmail.com](mailto:rancopar@gmail.com) · [rancopar.com](https://rancopar.com) · [github.com/rancopar](https://github.com/rancopar)
+
+---
+
+<p align="center">
+<sub>© 2026 RanCoPar, Kerala, India</sub>
+</p>
