@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { RanMark } from "../../components/RanMark";
 import { projects, getProjectBySlug } from "../../lib/projects";
+import { OrganizationJsonLd, ProjectJsonLd } from "../../components/JsonLd";
+
+const SITE_URL = "https://rancopar.com";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -14,18 +17,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
+  const url = `${SITE_URL}/work/${slug}`;
   return {
-    title: `${project.title} ${project.titleEm} — RanCoPar`,
-    description: project.tagline,
+    title: `${project.title} ${project.titleEm} — ${project.category}`,
+    description: `${project.tagline} Built by RanCoPar, a web development partnership based in Kerala, India. Stack: ${project.technologies.map((t) => t.label).join(", ")}.`,
+    keywords: ["RanCoPar", "Kerala web development", project.title, project.titleEm, project.category, ...project.technologies.map((t) => t.label)],
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      url,
+      title: `${project.title} ${project.titleEm} — RanCoPar`,
+      description: project.tagline,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${project.title} ${project.titleEm} — RanCoPar` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} ${project.titleEm} — RanCoPar`,
+      description: project.tagline,
+      images: ["/og-image.png"],
+    },
   };
 }
 
 const categoryColor: Record<string, string> = {
-  frontend: "var(--ember)",
-  backend: "var(--obsidian)",
-  database: "var(--graphite)",
-  tooling: "var(--graphite)",
-  design: "var(--ember)",
+  frontend: "var(--ember)", backend: "var(--obsidian)",
+  database: "var(--graphite)", tooling: "var(--graphite)", design: "var(--ember)",
 };
 
 export default async function ProjectPage({ params }: Props) {
@@ -39,12 +55,19 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
+      <OrganizationJsonLd />
+      <ProjectJsonLd
+        slug={project.slug}
+        title={`${project.title} ${project.titleEm}`}
+        tagline={project.tagline}
+        summary={project.summary}
+        year={project.year}
+        technologies={project.technologies}
+      />
       <nav className="topbar">
         <Link href="/" className="nav-brand">
           <RanMark width={16} height={19} />
-          <span className="nav-name">
-            Ran<span className="dim">CoPar</span>
-          </span>
+          <span className="nav-name">Ran<span className="dim">CoPar</span></span>
         </Link>
         <div className="nav-links">
           <Link href="/work" className="nav-text-link">Work</Link>
@@ -58,11 +81,8 @@ export default async function ProjectPage({ params }: Props) {
           <div className="proj-hero-inner">
             <Link href="/work" className="back-link caption">← All work</Link>
             <div className="proj-num caption">{project.num}</div>
-            <h1 className="serif-heading proj-title">
-              {project.title} <em>{project.titleEm}</em>
-            </h1>
+            <h1 className="serif-heading proj-title">{project.title} <em>{project.titleEm}</em></h1>
             <p className="proj-tagline">{project.tagline}</p>
-
             <div className="proj-meta-row">
               <div className="proj-meta-item">
                 <span className="caption proj-meta-label">Category</span>
@@ -79,7 +99,6 @@ export default async function ProjectPage({ params }: Props) {
                 </span>
               </div>
             </div>
-
             {project.links.length > 0 && (
               <div className="proj-links">
                 {project.links.map((l) => (
@@ -110,7 +129,6 @@ export default async function ProjectPage({ params }: Props) {
             <span className="caption proj-section-label">Overview</span>
             <p className="proj-prose">{project.summary}</p>
           </section>
-
           <section className="proj-section proj-csro">
             <div className="proj-cso-item">
               <span className="caption proj-section-label">The challenge</span>
@@ -125,7 +143,6 @@ export default async function ProjectPage({ params }: Props) {
               <p className="proj-prose">{project.outcome}</p>
             </div>
           </section>
-
           <section className="proj-section">
             <span className="caption proj-section-label">Technology stack</span>
             <div className="proj-stack">
@@ -134,13 +151,9 @@ export default async function ProjectPage({ params }: Props) {
                 if (!items.length) return null;
                 return (
                   <div key={cat} className="proj-stack-group">
-                    <span className="caption proj-stack-cat" style={{ color: categoryColor[cat] }}>
-                      {cat}
-                    </span>
+                    <span className="caption proj-stack-cat" style={{ color: categoryColor[cat] }}>{cat}</span>
                     <div className="proj-stack-tags">
-                      {items.map((t) => (
-                        <span key={t.label} className="proj-tag">{t.label}</span>
-                      ))}
+                      {items.map((t) => <span key={t.label} className="proj-tag">{t.label}</span>)}
                     </div>
                   </div>
                 );

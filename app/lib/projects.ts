@@ -48,8 +48,8 @@ export const projects: Project[] = [
       { label: "Vercel", category: "tooling" },
     ],
     links: [
-      { label: "Live Site", href: "https://zaitoon-kitchen.vercel.app/" },
-      { label: "GitHub", href: "https://github.com/rancopar/zaitoon-kitchen" },
+      { label: "Live Site", href: "#" },
+      { label: "GitHub", href: "https://github.com/rancopar" },
     ],
     images: [
       { src: "/images/zaitoon-hero.jpg", alt: "Zaitoon Kitchen landing page", caption: "Dark editorial hero section" },
