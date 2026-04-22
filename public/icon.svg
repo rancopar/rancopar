@@ -1,5 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="#0E1116">
-  <rect x="15" y="10" width="18" height="100" />
-  <path fill-rule="evenodd" d="M 33 10 H 55 A 25 25 0 0 1 55 60 H 33 Z M 33 24 H 52 A 12 12 0 0 1 52 46 H 33 Z" />
-  <polygon points="33,65 55,65 82,110 60,110" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="#0E1116" role="img" aria-label="RanCoPar">
+  <title>RanCoPar</title>
+  <rect x="15" y="10" width="18" height="100"/>
+  <path fill-rule="evenodd" d="M 33 10 H 55 A 25 25 0 0 1 55 60 H 33 Z M 33 24 H 52 A 12 12 0 0 1 52 46 H 33 Z"/>
+  <polygon points="33,65 55,65 82,110 60,110"/>
 </svg>
