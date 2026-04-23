@@ -47,6 +47,8 @@ Available for new projects.
 
 ---
 
+## License
+
 <p align="center">
-<sub>© 2026 RanCoPar, Kerala, India</sub>
+  <sub>© 2026 RanCoPar, Kerala, India. All rights reserved.<br> See <a href="./LICENSE">LICENSE</a> for details.</sub>
 </p>
